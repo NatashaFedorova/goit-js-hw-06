@@ -42,13 +42,11 @@ const createBtnClickHandler = () => {
   createBoxes(dataInputChangeHandler());
 };
 
-// очищає вміст div#boxes ================================
 const destroyBoxes = () => {
   refs.boxes.innerHTML = '';
   refs.input.value = '';
 };
 
-// кнопка-тригер видалення блоків==========================
 const destroyBtnClickHandler = () => {
   destroyBoxes();
 };
