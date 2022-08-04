@@ -27,11 +27,21 @@ const dataInputChangeHandler = () => refs.input.value;
 const boxesArr = [];
 
 const createBoxes = amount => {
-  while (boxesArr.length < amount) {
-    boxesArr.push(
-      `<div class="box" style="border: 1px solid #000000; background-color: ${getRandomHexColor()}; width: 30px; height: 30px; margin: 5px"></div>`
-    );
+  if (boxesArr.length < amount) {
+    while (boxesArr.length < amount) {
+      boxesArr.push(
+        `<div class="box" style="border: 1px solid #000000; background-color: ${getRandomHexColor()}; width: 30px; height: 30px; margin: 5px"></div>`
+      );
+    }
+  } else {
+    while (boxesArr.length > amount) {
+      boxesArr.pop(
+        `<div class="box" style="border: 1px solid #000000; background-color: ${getRandomHexColor()}; width: 30px; height: 30px; margin: 5px"></div>`
+      );
+    }
   }
+
+  console.log(boxesArr);
 
   refs.boxes.insertAdjacentHTML(
     'beforeend',
