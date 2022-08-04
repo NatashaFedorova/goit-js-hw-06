@@ -4,7 +4,7 @@ const refs = {
 };
 
 const changeOutputHandler = () => {
-  refs.output.textContent = event.currentTarget.value;
+  refs.output.textContent = event.currentTarget.value || 'Anonymous';
 };
 
 refs.input.addEventListener('input', changeOutputHandler);

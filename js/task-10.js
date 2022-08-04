@@ -33,9 +33,10 @@ const createBoxes = amount => {
     );
   }
 
-  refs.boxes.innerHTML = boxesArr
-    .map((el, idx) => el.replaceAll('30px', `${30 + 10 * idx}px`))
-    .join('');
+  refs.boxes.insertAdjacentHTML(
+    'beforeend',
+    boxesArr.map((el, idx) => el.replaceAll('30px', `${30 + 10 * idx}px`)).join('')
+  );
 };
 
 const createBtnClickHandler = () => {
