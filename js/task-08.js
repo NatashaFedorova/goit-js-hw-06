@@ -12,9 +12,11 @@ const formСheckHandler = e => {
 
   const { email, password } = e.currentTarget.elements;
 
-  email.value === '' || password.value === ''
-    ? alert(`Увага! Всі поля мають бути заповнені.`)
-    : console.log(createObj(email.value, password.value));
+  if (email.value === '' || password.value === '') {
+    alert(`Увага! Всі поля мають бути заповнені.`);
+  } else {
+    console.log(createObj(email.value, password.value));
+  }
 
   e.currentTarget.reset();
 };
